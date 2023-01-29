@@ -9,23 +9,32 @@
             int player = 1;
             Console.WriteLine("Position" + position);
             int dieRoll = 0;
-            Random random = new Random();
-            int dieroll = random.Next(0,7);
-            Console.WriteLine("Number of die roll" +dieroll);
-            int option = random.Next(3);
-            switch(option)
+            while (position != 100)
             {
-                case 1:
-                    Console.WriteLine("Play Snake");
-                    position -= 1;
-                    break;
-                case 2:
-                    Console.WriteLine("Play Ladder");
-                    position++;
-                    break;
-                default:
-                    Console.WriteLine("No play");
-                    break;
+
+
+                Random random = new Random();
+                int dieroll = random.Next(0, 7);
+                Console.WriteLine("Number of die roll" + dieroll);
+                int option = random.Next(3);
+                switch (option)
+                {
+                    case 1:
+                        Console.WriteLine("Play Snake");
+                        position -= 1;
+                        break;
+                    case 2:
+                        Console.WriteLine("Play Ladder");
+                        position++;
+                        break;
+                    default:
+                        Console.WriteLine("No play");
+                        break;
+                }
+            }
+            if (position < 0)
+            {
+                position = 0;
             }
         }
     }
